@@ -99,4 +99,9 @@ public class UserController {
     public void taskQuartz(){
         System.out.println("执行定时任务打印");
     }
+
+    @Scheduled(cron = "0/5 * * * * ?")
+    public void taskQuartz2(){
+        System.out.println("执行定时任务打印2");
+    }
 }
