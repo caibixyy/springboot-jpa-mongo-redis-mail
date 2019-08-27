@@ -1,0 +1,94 @@
+#服务端口
+server:
+  port: 8082
+#连接数据库
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
+    #useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    #useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource    #使用阿里数据源
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: 
+
+#thymeleaf配置
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+    enabled: true
+#    encoding: UTF-8
+#    servlet:
+#      content-type: text/html
+
+#rabbitmq配置
+  rabbitmq:
+    host: 192.168.43.222
+    port: 5672
+    username: guest
+    password: guest
+
+
+#mongoDB
+  mongodb:
+    uri: mongodb://root:root@127.0.0.1:27017/snmp
+
+
+#mabtis配置
+#mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: true
+  cache:
+    type: redis
+  #redis做缓存配置
+  redis:
+    #数据库索引
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        min-idle: 0
+        max-idle: 5
+      shutdown-timeout: 5000ms
+#日志
+logging:
+  level:
+    root: info
+  file: G:/log/info.log
+
+#elasticsearch，springboot暂时不支持最新版的elasticsearch
+#  data:
+#    # 全文检索 elasticsearch
+#    elasticsearch:
+#      cluster-name: elasticsearch #节点名称
+#      cluster-nodes: http://192.168.1.104:9300 #节点地址
+#      repositories:
+#        enabled: true
+#邮箱
+#  mail:
+#    host: smtp.qq.com
+#    username: 1562016984@qq.com
+#    #QQ邮箱的授权码
+#    password: vajgtbobfxggbage
+#    default-encoding: UTF-8
+#    test-connection:
+#    protocol:
+#    properties:
+#      mail.smtp.socketFactory.fallback: true
+#      mail.smtp.starttls.enable: true
+#      mail.smtp.port: 25
+
+
+
+
+
+
